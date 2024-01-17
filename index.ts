@@ -16,6 +16,7 @@ export { IVAPIConnectorVariable, IVAPIMarkupVariable } from './engine/connectors
 // Control on top of the execution process, routing, connections, etc. 
 export { VAPIExecutionManager } from './engine/execution/execution.manager';
 export { VAPIExecutionError } from './engine/execution/execution.error';
+export * as EXECUTION_CONSTANTS from './engine/execution/execution.constants';
 export * as VAPIExecutionTypes from './engine/execution/execution.types';
 
 
@@ -31,7 +32,12 @@ export * as VAPILoggerTypes from './engine/logger/logger.types';
 export { VAPIExecutionTask } from './engine/tasks/task.abstract';
 export { VAPIExecutionTaskError } from './engine/tasks/task.errors';
 export * as TASK_CONSTANTS from './engine/tasks/task.constants';
-export { IVAPIExecutionTaskConstructorConfig, IVAPISerializedExecutionTask } from './engine/tasks/task.types';
+export {
+    IVAPIExecutionTaskConstructorConfig,
+    IVAPISerializedExecutionTask,
+    IVAPIExecutionTaskOnProps,
+    IVAPIExecutionTaskEmitProps
+} from './engine/tasks/task.types';
 
 
 // =======Errors=======
@@ -41,3 +47,11 @@ export { VAPIError } from './engine/error/error.abstract'
 // =======Memory=======
 export { VAPITaskMemory } from './engine/memory/memory.abstract'
 export { IVAPISerializedTaskMemory } from './engine/memory/memory.types'
+
+
+
+// SHARED
+
+export {
+    Dictionary as VAPIDictionary
+} from './engine/shared/types'
