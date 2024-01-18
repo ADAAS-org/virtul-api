@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { IVAPISerializedTaskMemory } from './memory.types'
-import { IVAPIConnectorVariable, IVAPIMarkupVariable } from 'engine/connectors/connector.types';
+import { IVAPIConnectorVariable, IVAPIMarkupVariable } from '../connectors/connector.types';
 
 export class VAPITaskMemory {
 
