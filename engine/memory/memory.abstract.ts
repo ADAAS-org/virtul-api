@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { IVAPISerializedTaskMemory } from './memory.types'
+import { IVAPIConnectorVariable, IVAPIMarkupVariable } from 'engine/connectors/connector.types';
 
 export class VAPITaskMemory {
 
@@ -15,19 +16,18 @@ export class VAPITaskMemory {
     }
 
 
-    async add(key: string, value: any) {
-
-        this.memory.set(key, value);
+    async add(param: IVAPIConnectorVariable | IVAPIMarkupVariable, value: any) {
+        this.memory.set(param.id, value);
     }
 
 
-    async get(key: string): Promise<any> {
-        return this.memory.get(key);
+    async get(param: IVAPIConnectorVariable | IVAPIMarkupVariable): Promise<any> {
+        return this.memory.get(param.id);
     }
 
 
-    async remove(key: string) {
-        this.memory.delete(key);
+    async remove(param: IVAPIConnectorVariable | IVAPIMarkupVariable) {
+        this.memory.delete(param.id);
     }
 
 

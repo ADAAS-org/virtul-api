@@ -29,7 +29,7 @@ export class VAPIConnectorsParamsHelper {
 
                 const source = mapping && mapping.length ? mapping.find(mp => mp.target.id === parameterDefinition.id)?.source : undefined
 
-                const requestValue = await memory.get(source ? source.id : parameterDefinition.id);
+                const requestValue = await memory.get(source ? source : parameterDefinition);
 
                 console.log('requestValue: ', requestValue)
 
