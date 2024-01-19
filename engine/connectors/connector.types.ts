@@ -66,7 +66,7 @@ export interface IVAPIConnectorSerializedError extends IVAPISerializedError {
 export interface IVAPIConnectorVariable {
     id: string,
     name: string,
-    value: string,
+    value: any,
     type: 'json' | 'array' | 'number' | 'string' | 'boolean' | 'base_64' | 'file' | 'file_url' | string,
     issuer: 'system' | 'custom' | 'proxy' | 'credentials' | string
 }

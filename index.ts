@@ -9,7 +9,12 @@ export { VAPIConnector } from './engine/connectors/connector.abstract';
 export * from './engine/connectors/connectors-types';
 export { VAPIConnectorError } from './engine/connectors/connector.errors';
 export { VAPIConnectorsManager } from './engine/connectors/connector.manager';
-export { IVAPIConnectorVariable, IVAPIMarkupVariable } from './engine/connectors/connector.types';
+export {
+    IVAPIConnectorVariable,
+    IVAPIMarkupVariable,
+    VAPIConnectorParamsMappingObject,
+    IVAPIConnectorExecuteAddons
+} from './engine/connectors/connector.types';
 
 
 // =======Execution=======
