@@ -1,6 +1,6 @@
 {
   "name": "@adaas/virtul-api",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "The library to templitify API requests and work with async tasks. ",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -26,7 +26,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"tsc --declaration "
+    "build": "tsc --declaration "
   },
   "repository": {
     "type": "git",
