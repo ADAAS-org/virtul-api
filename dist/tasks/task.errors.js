@@ -1,31 +1,22 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-exports.__esModule = true;
-var error_abstract_1 = require("../error/error.abstract");
-var VAPIExecutionTaskError = /** @class */ (function (_super) {
-    __extends(VAPIExecutionTaskError, _super);
-    function VAPIExecutionTaskError(task, params, originalError) {
-        var _this = _super.call(this, params) || this;
-        _this.task = task;
-        _this.name = params.name;
-        _this.code = params.code;
-        _this.description = params.description;
-        _this.originalError = originalError;
-        return _this;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VAPIExecutionTaskError = void 0;
+const error_abstract_1 = require("../error/error.abstract");
+class VAPIExecutionTaskError extends error_abstract_1.VAPIError {
+    name;
+    code;
+    description;
+    originalError;
+    task;
+    constructor(task, params, originalError) {
+        super(params);
+        this.task = task;
+        this.name = params.name;
+        this.code = params.code;
+        this.description = params.description;
+        this.originalError = originalError;
     }
-    VAPIExecutionTaskError.prototype.toJSON = function () {
+    toJSON() {
         return {
             name: this.name,
             code: this.code,
@@ -33,8 +24,7 @@ var VAPIExecutionTaskError = /** @class */ (function (_super) {
             message: this.message,
             task: this.task.toJSON()
         };
-    };
-    return VAPIExecutionTaskError;
-}(error_abstract_1.VAPIError));
+    }
+}
 exports.VAPIExecutionTaskError = VAPIExecutionTaskError;
 //# sourceMappingURL=task.errors.js.map

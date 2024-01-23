@@ -1,104 +1,71 @@
 "use strict";
-exports.__esModule = true;
-var ParamIterable = /** @class */ (function () {
-    function ParamIterable(element, index) {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ParamsIterator = exports.ParamIterable = void 0;
+class ParamIterable {
+    element;
+    i;
+    constructor(element, index) {
         this.element = element;
         this.i = index;
     }
-    Object.defineProperty(ParamIterable.prototype, "index", {
-        get: function () {
-            return this.i;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ParamIterable.prototype, "id", {
-        get: function () {
-            var attribute = this.element.getAttribute("id");
-            // It always has p- because this is a UI behavior. If not - then basically error
-            var stringId = attribute.split("p-").pop();
-            return stringId;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ParamIterable.prototype, "key", {
-        get: function () {
-            return this.element.getAttribute('prst-key') || '';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ParamIterable.prototype, "type", {
-        get: function () {
-            return this.element.getAttribute('prst-param-type') || '';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ParamIterable.prototype, "path", {
-        get: function () {
-            return this.element.getAttribute('prst-param-path') || '';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ParamIterable.prototype, "issuer", {
-        get: function () {
-            return this.element.getAttribute('prst-param-issuer') || '';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ParamIterable.prototype, "referenceId", {
-        get: function () {
-            return this.element.getAttribute('prst-reference-id') || '';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ParamIterable.prototype, "replacement", {
-        get: function () {
-            return this.element.outerHTML;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return ParamIterable;
-}());
+    get index() {
+        return this.i;
+    }
+    get id() {
+        const attribute = this.element.getAttribute("id");
+        // It always has p- because this is a UI behavior. If not - then basically error
+        const stringId = attribute.split("p-").pop();
+        return stringId;
+    }
+    get key() {
+        return this.element.getAttribute('prst-key') || '';
+    }
+    get type() {
+        return this.element.getAttribute('prst-param-type') || '';
+    }
+    get path() {
+        return this.element.getAttribute('prst-param-path') || '';
+    }
+    get issuer() {
+        return this.element.getAttribute('prst-param-issuer') || '';
+    }
+    get referenceId() {
+        return this.element.getAttribute('prst-reference-id') || '';
+    }
+    get replacement() {
+        return this.element.outerHTML;
+    }
+}
 exports.ParamIterable = ParamIterable;
-var ParamsIterator = /** @class */ (function () {
-    function ParamsIterator(data) {
-        this.data = data.map(function (element, index) { return new ParamIterable(element, index); });
+class ParamsIterator {
+    data;
+    index;
+    constructor(data) {
+        this.data = data.map((element, index) => new ParamIterable(element, index));
         this.index = 0;
     }
-    Object.defineProperty(ParamsIterator.prototype, "length", {
-        get: function () {
-            return this.data.length;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    get length() {
+        return this.data.length;
+    }
     // Implement the `next()` method of the iterator protocol
-    ParamsIterator.prototype.next = function () {
+    next() {
         if (this.index < this.data.length) {
             return { value: this.data[this.index++], done: false };
         }
         else {
             return { value: undefined, done: true };
         }
-    };
+    }
     // Custom method to get the current value
-    ParamsIterator.prototype.current = function () {
+    current() {
         if (this.index >= 0 && this.index < this.data.length) {
             return this.data[this.index];
         }
         return undefined;
-    };
-    ParamsIterator.prototype[Symbol.iterator] = function () {
+    }
+    [Symbol.iterator]() {
         return this;
-    };
-    return ParamsIterator;
-}());
+    }
+}
 exports.ParamsIterator = ParamsIterator;
 //# sourceMappingURL=params.iterator.js.map

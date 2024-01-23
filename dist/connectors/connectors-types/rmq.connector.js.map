@@ -1,1 +1,1 @@
-{"version":3,"file":"rmq.connector.js","sourceRoot":"","sources":["../../../engine/connectors/connectors-types/rmq.connector.ts"],"names":[],"mappings":";;AAAA;IAAA;IAKA,CAAC;IAAD,uBAAC;AAAD,CAAC,AALD,IAKC;AALY,4CAAgB"}
+{"version":3,"file":"rmq.connector.js","sourceRoot":"","sources":["../../../engine/connectors/connectors-types/rmq.connector.ts"],"names":[],"mappings":";;;AAAA,MAAa,gBAAgB;CAK5B;AALD,4CAKC"}
