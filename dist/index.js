@@ -10,62 +10,47 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 exports.__esModule = true;
-var params_parser_1 = require("./engine/parsers/params.parser");
+var params_parser_1 = require("./parsers/params.parser");
 exports.ParamsParser = params_parser_1.ParamsParser;
-var params_iterator_1 = require("./engine/parsers/params.iterator");
+var params_iterator_1 = require("./parsers/params.iterator");
 exports.ParamIterable = params_iterator_1.ParamIterable;
 exports.ParamsIterator = params_iterator_1.ParamsIterator;
 // export * as ParsersTypes from './engine/parsers/parser.types'
 // =======Connectors=======
 // Wrappers on top of protocols e.g. HTTP
-var connector_abstract_1 = require("./engine/connectors/connector.abstract");
+var connector_abstract_1 = require("./connectors/connector.abstract");
 exports.VAPIConnector = connector_abstract_1.VAPIConnector;
-__export(require("./engine/connectors/connectors-types"));
-var connector_errors_1 = require("./engine/connectors/connector.errors");
+__export(require("./connectors/connectors-types"));
+var connector_errors_1 = require("./connectors/connector.errors");
 exports.VAPIConnectorError = connector_errors_1.VAPIConnectorError;
-var connector_manager_1 = require("./engine/connectors/connector.manager");
+var connector_manager_1 = require("./connectors/connector.manager");
 exports.VAPIConnectorsManager = connector_manager_1.VAPIConnectorsManager;
-var connector_types_1 = require("./engine/connectors/connector.types");
-exports.IVAPIConnectorVariable = connector_types_1.IVAPIConnectorVariable;
-exports.IVAPIMarkupVariable = connector_types_1.IVAPIMarkupVariable;
-exports.VAPIConnectorParamsMappingObject = connector_types_1.VAPIConnectorParamsMappingObject;
-exports.IVAPIConnectorExecuteAddons = connector_types_1.IVAPIConnectorExecuteAddons;
 // =======Execution=======
 // Control on top of the execution process, routing, connections, etc. 
-var execution_manager_1 = require("./engine/execution/execution.manager");
+var execution_manager_1 = require("./execution/execution.manager");
 exports.VAPIExecutionManager = execution_manager_1.VAPIExecutionManager;
-var execution_error_1 = require("./engine/execution/execution.error");
+var execution_error_1 = require("./execution/execution.error");
 exports.VAPIExecutionError = execution_error_1.VAPIExecutionError;
-exports.EXECUTION_CONSTANTS = __importStar(require("./engine/execution/execution.constants"));
-exports.VAPIExecutionTypes = __importStar(require("./engine/execution/execution.types"));
+exports.EXECUTION_CONSTANTS = __importStar(require("./execution/execution.constants"));
+exports.VAPIExecutionTypes = __importStar(require("./execution/execution.types"));
 // =======Loggers=======
 // A wrapper on top of possible loggers and listeners
-var logger_abstract_1 = require("./engine/logger/logger.abstract");
+var logger_abstract_1 = require("./logger/logger.abstract");
 exports.VAPILogger = logger_abstract_1.VAPILogger;
-var logger_errors_1 = require("./engine/logger/logger.errors");
+var logger_errors_1 = require("./logger/logger.errors");
 exports.VAPILoggerError = logger_errors_1.VAPILoggerError;
-exports.VAPILoggerTypes = __importStar(require("./engine/logger/logger.types"));
+exports.VAPILoggerTypes = __importStar(require("./logger/logger.types"));
 // =======Task=======
 // A wrapper on top of possible loggers and listeners
-var task_abstract_1 = require("./engine/tasks/task.abstract");
+var task_abstract_1 = require("./tasks/task.abstract");
 exports.VAPIExecutionTask = task_abstract_1.VAPIExecutionTask;
-var task_errors_1 = require("./engine/tasks/task.errors");
+var task_errors_1 = require("./tasks/task.errors");
 exports.VAPIExecutionTaskError = task_errors_1.VAPIExecutionTaskError;
-exports.TASK_CONSTANTS = __importStar(require("./engine/tasks/task.constants"));
-var task_types_1 = require("./engine/tasks/task.types");
-exports.IVAPIExecutionTaskConstructorConfig = task_types_1.IVAPIExecutionTaskConstructorConfig;
-exports.IVAPISerializedExecutionTask = task_types_1.IVAPISerializedExecutionTask;
-exports.IVAPIExecutionTaskOnProps = task_types_1.IVAPIExecutionTaskOnProps;
-exports.IVAPIExecutionTaskEmitProps = task_types_1.IVAPIExecutionTaskEmitProps;
+exports.TASK_CONSTANTS = __importStar(require("./tasks/task.constants"));
 // =======Errors=======
-var error_abstract_1 = require("./engine/error/error.abstract");
+var error_abstract_1 = require("./error/error.abstract");
 exports.VAPIError = error_abstract_1.VAPIError;
 // =======Memory=======
-var memory_abstract_1 = require("./engine/memory/memory.abstract");
+var memory_abstract_1 = require("./memory/memory.abstract");
 exports.VAPITaskMemory = memory_abstract_1.VAPITaskMemory;
-var memory_types_1 = require("./engine/memory/memory.types");
-exports.IVAPISerializedTaskMemory = memory_types_1.IVAPISerializedTaskMemory;
-// SHARED
-var types_1 = require("./engine/shared/types");
-exports.VAPIDictionary = types_1.Dictionary;
 //# sourceMappingURL=index.js.map
