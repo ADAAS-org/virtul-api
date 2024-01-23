@@ -53,4 +53,8 @@ exports.VAPIError = error_abstract_1.VAPIError;
 // =======Memory=======
 var memory_abstract_1 = require("./memory/memory.abstract");
 exports.VAPITaskMemory = memory_abstract_1.VAPITaskMemory;
+// =======Types Convertors=======
+var types_converter_abstract_1 = require("./connectors/types-converter/types-converter.abstract");
+exports.VAPITypesConverter = types_converter_abstract_1.VAPITypesConverter;
+__export(require("./connectors/types-converter/converters.default"));
 //# sourceMappingURL=index.js.map

@@ -9,19 +9,15 @@ export { VAPIConnector } from './connectors/connector.abstract';
 export * from './connectors/connectors-types';
 export { VAPIConnectorError } from './connectors/connector.errors';
 export { VAPIConnectorsManager } from './connectors/connector.manager';
-import {
-    IVAPIConnectorVariable,
-    IVAPIMarkupVariable,
-    VAPIConnectorParamsMappingObject,
-    IVAPIConnectorExecuteAddons
-} from './connectors/connector.types';
-
 export {
     IVAPIConnectorVariable,
     IVAPIMarkupVariable,
     VAPIConnectorParamsMappingObject,
-    IVAPIConnectorExecuteAddons
-}
+    IVAPIConnectorExecuteAddons,
+    IVAPIConnectorResultProcessingReturnValue,
+    IConnectorAPIConfig
+} from './connectors/connector.types';
+
 
 
 // =======Execution=======
@@ -60,6 +56,9 @@ export { VAPIError } from './error/error.abstract'
 export { VAPITaskMemory } from './memory/memory.abstract'
 export { IVAPISerializedTaskMemory } from './memory/memory.types'
 
+// =======Types Convertors=======
+export { VAPITypesConverter } from './connectors/types-converter/types-converter.abstract'
+export * from './connectors/types-converter/converters.default'
 
 
 // SHARED
