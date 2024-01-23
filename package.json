@@ -2,7 +2,10 @@
   "name": "@adaas/virtul-api",
   "version": "1.0.5",
   "description": "The library to templitify API requests and work with async tasks. ",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  
   "directories": {
     "doc": "docs"
   },
@@ -18,6 +21,7 @@
     "typescript": "^4.6.3",
     "uuid": "^8.3.2"
   },
+
   "devDependencies": {
     "@types/node": "^17.0.45",
     "ts-node": "^10.9.1"

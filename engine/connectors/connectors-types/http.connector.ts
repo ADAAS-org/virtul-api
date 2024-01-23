@@ -2,6 +2,7 @@ import {
     IConnectorAPIConfig,
     IVAPIConnectorExecuteAddons,
     IVAPIConnectorResultProcessingReturnValue,
+    IVAPIHTTPConnectorResultProcessingReturnValue,
     VAPIConnectorActions
 } from "../connector.types";
 import {
@@ -97,8 +98,8 @@ export class VAPIHTTPConnector extends VAPIConnector {
     private async responseProcessing(
         originalResponse: AxiosResponse,
         converter: VAPITypesConverter
-    ): Promise<IVAPIConnectorResultProcessingReturnValue> {
-        let out: IVAPIConnectorResultProcessingReturnValue = {
+    ): Promise<IVAPIHTTPConnectorResultProcessingReturnValue> {
+        let out: IVAPIHTTPConnectorResultProcessingReturnValue = {
             original: originalResponse,
             result: {}
         };

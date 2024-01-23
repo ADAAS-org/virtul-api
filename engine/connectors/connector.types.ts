@@ -5,6 +5,7 @@ import { VAPIConnector } from "./connector.abstract";
 import { VAPIExecutionTaskLifecycle } from "../tasks/task.types";
 import { VAPITypesConverter } from './types-converter/types-converter.abstract'
 import { VAPITaskMemory } from '../memory/memory.abstract'
+import { AxiosResponse } from "axios";
 
 export interface IVAPIConnectorEmitProps {
     severity?: 'error' | 'info' | 'warning',
@@ -116,3 +117,9 @@ export interface IVAPIConnectorResultProcessingReturnValue {
     original: Dictionary<any>,
     result: Dictionary<any>
 }
+
+
+export interface IVAPIHTTPConnectorResultProcessingReturnValue extends IVAPIConnectorResultProcessingReturnValue {
+    original: AxiosResponse
+
+} 

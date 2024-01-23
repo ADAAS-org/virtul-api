@@ -12,8 +12,7 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "noErrorTruncation": true,
-    "jsx": "react",
-    "target": "es2015",
+    "target": "ES2022",
     "module": "commonjs",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -37,10 +36,10 @@
     ]
   },
   "include": [
-    "engine",
+    "engine/**/*"
   ],
   "exclude": [
-    "node_modules",
+    "node_modules/**/*",
     "dist"
   ]
 }
