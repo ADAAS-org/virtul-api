@@ -1,6 +1,6 @@
 {
   "name": "@adaas/virtul-api",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "The library to templitify API requests and work with async tasks. ",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
