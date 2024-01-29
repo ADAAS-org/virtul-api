@@ -65,6 +65,8 @@ export class VAPIHTTPConnector extends VAPIConnector {
         const headers = await VAPIConnectorsParamsHelper.fillInByMarkup(this.config.headers, this.variables, request, extras.mapping);
         const params = await VAPIConnectorsParamsHelper.fillInByMarkup(this.config.params, this.variables, request, extras.mapping);
         const body = this.config.body ? await VAPIConnectorsParamsHelper.fillInByMarkup(this.config.body, this.variables, request, extras.mapping) : undefined;
+        const url = await VAPIConnectorsParamsHelper.fillInByMarkupString(this.config.url, this.variables, request, extras.mapping);
+
 
         this.emit(VAPIConnectorActions.EXECUTION_IN_PROGRESS, {
             message: `Trying to execute... ${this.config.method} :: ${this.config.url}`,
@@ -77,7 +79,7 @@ export class VAPIHTTPConnector extends VAPIConnector {
 
         if (this.bodyMethods.includes(this.config.method)) {
             return await axios[this.config.method](
-                this.config.url,
+                url,
                 body,
                 {
                     headers,
@@ -86,7 +88,7 @@ export class VAPIHTTPConnector extends VAPIConnector {
 
         } else {
             return await axios[this.config.method](
-                this.config.url,
+                url,
                 {
                     headers,
                     params
