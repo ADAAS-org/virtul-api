@@ -85,7 +85,29 @@ export class VAPIConnectorsParamsHelper {
 
         console.log('out: ', out);
 
-        return out;
+        return this.cleanUpHtml(out);
+    }
+
+    
+
+
+    static cleanUpHtml(input: string): string {
+        // Remove HTML tags
+        const withoutHtmlTags = input.replace(/<[^>]*>/g, '');
+
+        // Remove inline styles
+        const withoutStyles = withoutHtmlTags.replace(/style\s*=\s*"[^"]*"/g, '');
+
+        // Remove scripts
+        const withoutScripts = withoutStyles.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+
+        // Remove non-breaking spaces
+        const withoutNbsp = withoutScripts.replace(/&nbsp;/g, ' ');
+
+        // Trim extra whitespace
+        const trimmed = withoutNbsp.trim();
+
+        return trimmed;
     }
 
 }
