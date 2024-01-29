@@ -3,4 +3,5 @@ import { Dictionary } from "../../shared/types";
 import { VAPIConnectorParamsMappingObject } from "../connector.types";
 export declare class VAPIConnectorsParamsHelper {
     static fillInByMarkup(markup: string, connectorParameters: Map<any, any>, memory: VAPITaskMemory, mapping?: VAPIConnectorParamsMappingObject[]): Promise<Dictionary<string>>;
+    static fillInByMarkupString(markup: string, connectorParameters: Map<any, any>, memory: VAPITaskMemory, mapping?: VAPIConnectorParamsMappingObject[]): Promise<string>;
 }

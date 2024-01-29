@@ -71,6 +71,7 @@ class VAPIHTTPConnector extends connector_abstract_1.VAPIConnector {
         const headers = await Params_herlper_1.VAPIConnectorsParamsHelper.fillInByMarkup(this.config.headers, this.variables, request, extras.mapping);
         const params = await Params_herlper_1.VAPIConnectorsParamsHelper.fillInByMarkup(this.config.params, this.variables, request, extras.mapping);
         const body = this.config.body ? await Params_herlper_1.VAPIConnectorsParamsHelper.fillInByMarkup(this.config.body, this.variables, request, extras.mapping) : undefined;
+        const url = await Params_herlper_1.VAPIConnectorsParamsHelper.fillInByMarkupString(this.config.url, this.variables, request, extras.mapping);
         this.emit(connector_types_1.VAPIConnectorActions.EXECUTION_IN_PROGRESS, {
             message: `Trying to execute... ${this.config.method} :: ${this.config.url}`,
             payload: {
@@ -80,13 +81,13 @@ class VAPIHTTPConnector extends connector_abstract_1.VAPIConnector {
             }
         });
         if (this.bodyMethods.includes(this.config.method)) {
-            return await axios_1.default[this.config.method](this.config.url, body, {
+            return await axios_1.default[this.config.method](url, body, {
                 headers,
                 params
             });
         }
         else {
-            return await axios_1.default[this.config.method](this.config.url, {
+            return await axios_1.default[this.config.method](url, {
                 headers,
                 params
             });
