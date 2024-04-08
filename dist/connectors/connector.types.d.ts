@@ -51,7 +51,9 @@ export interface IVAPIConnectorVariable {
 }
 export interface IVAPIMarkupVariable {
     id: string;
+    name: string;
     key: string;
+    value: any;
     type: 'json' | 'array' | 'number' | 'string' | 'boolean' | 'base_64' | 'file' | 'file_url' | string;
     issuer: 'system' | 'custom' | 'proxy' | 'credentials' | string;
     referenceId: string;

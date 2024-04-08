@@ -26,6 +26,12 @@ class ParamIterable {
     get path() {
         return this.element.getAttribute('prst-param-path') || '';
     }
+    get name() {
+        return this.element.getAttribute('prst-param-name') || '';
+    }
+    get value() {
+        return this.element.getAttribute('prst-param-value') || '';
+    }
     get issuer() {
         return this.element.getAttribute('prst-param-issuer') || '';
     }
@@ -34,6 +40,17 @@ class ParamIterable {
     }
     get replacement() {
         return this.element.outerHTML;
+    }
+    toJSON() {
+        return {
+            id: this.id,
+            name: this.name,
+            key: this.key,
+            type: this.type,
+            value: this.value,
+            issuer: this.issuer,
+            referenceId: this.referenceId,
+        };
     }
 }
 exports.ParamIterable = ParamIterable;
@@ -65,6 +82,9 @@ class ParamsIterator {
     }
     [Symbol.iterator]() {
         return this;
+    }
+    toArray() {
+        return this.data.map(d => d.toJSON());
     }
 }
 exports.ParamsIterator = ParamsIterator;
