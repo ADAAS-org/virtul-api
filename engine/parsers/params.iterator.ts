@@ -36,6 +36,14 @@ export class ParamIterable implements IVAPIMarkupVariable {
         return this.element.getAttribute('prst-param-path') || ''
     }
 
+    get name(): any {
+        return this.element.getAttribute('prst-param-name') || ''
+    }
+
+    get value(): any {
+        return this.element.getAttribute('prst-param-value') || ''
+    }
+
     get issuer(): string {
         return this.element.getAttribute('prst-param-issuer') || ''
     }
@@ -48,6 +56,18 @@ export class ParamIterable implements IVAPIMarkupVariable {
         return this.element.outerHTML;
     }
 
+
+    toJSON(): IVAPIMarkupVariable {
+        return {
+            id: this.id,
+            name: this.name,
+            key: this.key,
+            type: this.type,
+            value: this.value,
+            issuer: this.issuer,
+            referenceId: this.referenceId,
+        }
+    }
 
 
 }
@@ -88,5 +108,9 @@ export class ParamsIterator implements Iterator<ParamIterable> {
 
     [Symbol.iterator](): IterableIterator<ParamIterable> {
         return this;
+    }
+
+    toArray(): Array<IVAPIMarkupVariable> {
+        return this.data.map(d => d.toJSON())
     }
 }
